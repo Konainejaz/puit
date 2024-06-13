@@ -1,38 +1,308 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #08191a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+  box-shadow: inset;
+}
+
+#login {
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+  transition: color .3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 1rem;
+  margin-left: 0;
+  text-shadow: 0px 0px 10px gold;
+
+
+}
+
+#login:hover {
+  font-weight: bolder;
+  transition: all 0.3s ease;
+  color: gold;
+}
+
+.home {
+  position: sticky;
+  top: 5px;
+  z-index: 100;
+}
+
+*::selection {
+  color: gold;
+}
+
+.logo {
+  width: 2.5rem;
+  max-width: 100%;
+  height: 4rem;
+  display: block;
+  margin: 0 auto;
+  padding: 2px 0px;
+  background-color: rgb(21, 28, 9);
+  box-shadow: inset 0 0 0.4rem gold;
+  border-radius: 1%;
+}
+
+.nav {
+  width: 100%;
+  padding: 1.5rem 0;
+  position: fixed;
+  display: block;
+  unicode-bidi: isolate;
+  opacity: 1;
+}
+
+.navBar ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  list-style-type: none;
+}
+
+.navBar ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color .3s ease;
+  cursor: pointer;
+}
+
+.create {
+  width: 100%;
+  background-color: #151a1b;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 0.5rem 0.1rem #3f8e91;
   text-align: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.7rem;
+  white-space: nowrap;
+  max-width: 120px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.create:hover {
+  box-shadow: 0 0 0.5rem 0.3rem #3f8e91;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+  color: gold;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.homePage {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.homePage h1 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 2.5rem;
+  box-shadow: inset 0 0 0.5rem gold;
+  color: #fff;
+  background-color: #08191a;
+  width: 100%;
+  max-width: 700px;
+  min-width: 250px;
+  margin: 0 auto;
+}
+
+.active {
+  transform: scale(1.1);
+  transition: all 0.8s ease;
+  background-image: linear-gradient(90deg, #083839 0%, #451046 100%);
+  color: gold;
+}
+
+.grid {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 1rem;
+  max-width: 100%;
+  min-width: 300px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  max-width: 100%;
+  min-width: 300px;
+  position: sticky;
+  top: 70px;
+  z-index: 200;
 }
 
-.App-link {
-  color: #61dafb;
+.tabs button {
+  border: none;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(90deg, #496153 0%, #0c2829 100%);
+  text-transform: uppercase;
+  box-shadow: 0 0 0.3rem gold;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  white-space: nowrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabs button:hover {
+  transform: scale(1.13);
+  transition: all 0.8s ease;
+  background-image: linear-gradient(90deg, #083839 0%, #451046 100%);
+  color: gold;
+
 }
+
+.card {
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background-color: #08191a;
+  box-shadow: 0 0 0.5rem gold;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.card .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+  min-width: 300px;
+
+}
+
+.card .links:hover {
+  font-size: large;
+  font-weight: bolder;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 1rem;
+  max-width: 300px;
+  min-width: 30px;
+}
+
+.card h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+.card p {
+  font-size: large;
+  font-weight: bolder;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.card p:hover {
+  color: gold;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 1rem;
+  max-width: 300px;
+  min-width: 30px;
+}
+
+.card h1:hover {
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  margin: 0rem;
+  overflow: hidden;
+  transform: scale(1.1);
+  background-image: linear-gradient(90deg, #083839 0%, #451046 100%);
+  box-shadow: 0 0 0.5rem #fff;
+
+}
+
+.card:hover {
+  transition: all 0.3s ease;
+  color: #fff;
+  transform: scale(1.1);
+  background-image: linear-gradient(90deg, #083839 0%, #451046 100%);
+  box-shadow: 0 0 0.5rem #fff;
+}
+
+
+
+
